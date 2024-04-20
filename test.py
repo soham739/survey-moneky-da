@@ -22,10 +22,6 @@ questions = questions_import.copy()
 
 questions = questions.drop(columns=["Raw Question","Raw Subquestion","Subquestions"])#Questions dataset
 
-import os
-
-os.system("python --version > d:/v.txt")
-
 questions_merged = pd.merge(left=dataset_melt,right=questions,how="left",left_on="Questions+Subquestions",right_on="Questions + Subquestions")
 del questions_merged
 
